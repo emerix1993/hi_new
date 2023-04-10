@@ -12,6 +12,8 @@
 import os
 
 from pympler.asizeof import asizeof
+
+
 def search_word():
     with open("rockyou1.txt", "r") as rockyou:
         while True:
@@ -34,32 +36,14 @@ def search_word():
 
 
 while True:
-    with open("results.txt","a") as result1:
+    with open("results.txt", "a") as result1:
         count = 0
         for result in search_word():
             print(result)
             result1.write(result + "\n")
-            count +=1
+            count += 1
             print(f"Total lines {count}")
             pympler_size = asizeof(result)
             os_size = os.path.getsize('results.txt')
             print(f"Pympler size: {pympler_size} bytes")
             print(f"All size: {os_size} bytes")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
